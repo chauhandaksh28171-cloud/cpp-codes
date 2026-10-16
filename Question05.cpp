@@ -1,38 +1,4 @@
-// Menu-driven calculator demonstrating default in switch.
+// Q5: Input 10 numbers and count even and odd numbers.
 #include <iostream>
 using namespace std;
-
-int main() {
-    double firstNumber, secondNumber;
-    int choice;
-
-    cout << "Enter two numbers: ";
-    cin >> firstNumber >> secondNumber;
-
-    cout << "Calculator Menu\n";
-    cout << "1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n";
-    cout << "Enter your choice (1-4): ";
-    cin >> choice;
-
-    switch (choice) {
-        case 1:
-            cout << "Result = " << firstNumber + secondNumber << '\n';
-            break;
-        case 2:
-            cout << "Result = " << firstNumber - secondNumber << '\n';
-            break;
-        case 3:
-            cout << "Result = " << firstNumber * secondNumber << '\n';
-            break;
-        case 4:
-            if (secondNumber == 0) {
-                cout << "Division by zero is not allowed.\n";
-            } else {
-                cout << "Result = " << firstNumber / secondNumber << '\n';
-            }
-            break;
-        default:
-            cout << "Invalid menu choice.\n";
-    }
-    return 0;
-}
+int main(){int x,even=0,odd=0;cout<<"Enter 10 integers:\n";for(int i=0;i<10;i++){cin>>x;if(x%2==0)even++;else odd++;}cout<<"Even = "<<even<<"\nOdd = "<<odd<<"\n";}

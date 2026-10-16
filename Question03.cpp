@@ -1,35 +1,4 @@
-// Search for a target in a user-entered sequence; stop when found using break.
+// Q3: Find maximum and minimum elements in an array.
 #include <iostream>
 using namespace std;
-
-int main() {
-    int count, target;
-    cout << "How many numbers are in the sequence? ";
-    cin >> count;
-
-    if (count <= 0) {
-        cout << "Please enter a positive sequence length.\n";
-        return 0;
-    }
-
-    cout << "Enter the target number: ";
-    cin >> target;
-
-    bool found = false;
-    for (int index = 1; index <= count; ++index) {
-        int value;
-        cout << "Enter number " << index << ": ";
-        cin >> value;
-
-        if (value == target) {
-            found = true;
-            cout << "Number found at position " << index << ".\n";
-            break;
-        }
-    }
-
-    if (!found) {
-        cout << "Number not found in the sequence.\n";
-    }
-    return 0;
-}
+int main(){int n;cout<<"Enter size: ";cin>>n;if(n<1||n>1000){cout<<"Invalid size\n";return 0;}int a[1000];for(int i=0;i<n;i++)cin>>a[i];int mn=a[0],mx=a[0];for(int i=1;i<n;i++){if(a[i]<mn)mn=a[i];if(a[i]>mx)mx=a[i];}cout<<"Minimum = "<<mn<<"\nMaximum = "<<mx<<"\n";}

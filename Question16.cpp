@@ -1,28 +1,4 @@
-// Check whether a number is a perfect number.
+// Q16: Count occurrences using Linear Search.
 #include <iostream>
 using namespace std;
-
-int main() {
-    int number;
-    cout << "Enter a positive integer: ";
-    cin >> number;
-
-    if (number <= 0) {
-        cout << "Please enter a positive integer.\n";
-        return 0;
-    }
-
-    int divisorSum = 0;
-    for (int divisor = 1; divisor <= number / 2; ++divisor) {
-        if (number % divisor == 0) {
-            divisorSum += divisor;
-        }
-    }
-
-    if (number > 1 && divisorSum == number) {
-        cout << number << " is a perfect number.\n";
-    } else {
-        cout << number << " is not a perfect number.\n";
-    }
-    return 0;
-}
+int main(){int n,a[1000],x,count=0;cout<<"Enter size: ";cin>>n;if(n<1||n>1000){cout<<"Invalid size\n";return 0;}for(int i=0;i<n;i++)cin>>a[i];cout<<"Value to count: ";cin>>x;for(int i=0;i<n;i++)if(a[i]==x)count++;cout<<"Occurrences = "<<count<<"\n";}

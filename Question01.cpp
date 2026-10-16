@@ -1,14 +1,4 @@
-// Print numbers from 1 to 10, skipping 5 using continue.
+// Q1: Input and display a 1D array.
 #include <iostream>
 using namespace std;
-
-int main() {
-    for (int number = 1; number <= 10; ++number) {
-        if (number == 5) {
-            continue; // Skip 5.
-        }
-        cout << number << " ";
-    }
-    cout << '\n';
-    return 0;
-}
+int main(){ int n; cout<<"Enter size: "; cin>>n; if(n<1||n>1000){cout<<"Invalid size\n";return 0;} int a[1000]; for(int i=0;i<n;i++)cin>>a[i]; cout<<"Array: "; for(int i=0;i<n;i++)cout<<a[i]<<" "; cout<<"\n"; }

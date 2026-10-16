@@ -1,36 +1,4 @@
-// Check whether a number is a strong number.
+// Q18: Binary Search for integers; array must be sorted ascending.
 #include <iostream>
 using namespace std;
-
-int digitFactorial(int digit) {
-    int factorial = 1;
-    for (int value = 2; value <= digit; ++value) {
-        factorial *= value;
-    }
-    return factorial;
-}
-
-int main() {
-    int number;
-    cout << "Enter a non-negative integer: ";
-    cin >> number;
-
-    if (number < 0) {
-        cout << "Negative numbers are not strong numbers in this program.\n";
-        return 0;
-    }
-
-    int temporary = number;
-    int sum = 0;
-    do {
-        sum += digitFactorial(temporary % 10);
-        temporary /= 10;
-    } while (temporary > 0);
-
-    if (sum == number) {
-        cout << number << " is a strong number.\n";
-    } else {
-        cout << number << " is not a strong number.\n";
-    }
-    return 0;
-}
+int main(){int n,a[1000],x;cout<<"Enter size: ";cin>>n;if(n<1||n>1000){cout<<"Invalid size\n";return 0;}for(int i=0;i<n;i++)cin>>a[i];cout<<"Integer to find: ";cin>>x;int l=0,r=n-1,pos=-1;while(l<=r){int m=l+(r-l)/2;if(a[m]==x){pos=m;break;}if(a[m]<x)l=m+1;else r=m-1;}if(pos==-1)cout<<"Not found\n";else cout<<"Found at position "<<pos+1<<"\n";}

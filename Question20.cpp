@@ -1,32 +1,4 @@
-// Print the reverse of a number and check whether it is a palindrome.
+// Q20: Find the largest element in an ascending sorted array using Binary Search.
 #include <iostream>
 using namespace std;
-
-int main() {
-    long long number;
-    cout << "Enter a non-negative integer: ";
-    cin >> number;
-
-    if (number < 0) {
-        cout << "Please enter a non-negative integer.\n";
-        return 0;
-    }
-
-    long long original = number;
-    long long temporary = number;
-    long long reverse = 0;
-
-    do {
-        int digit = static_cast<int>(temporary % 10);
-        reverse = reverse * 10 + digit;
-        temporary /= 10;
-    } while (temporary > 0);
-
-    cout << "Reverse = " << reverse << '\n';
-    if (reverse == original) {
-        cout << original << " is a palindrome.\n";
-    } else {
-        cout << original << " is not a palindrome.\n";
-    }
-    return 0;
-}
+int main(){int n,a[1000];cout<<"Enter size: ";cin>>n;if(n<1||n>1000){cout<<"Invalid size\n";return 0;}cout<<"Enter values in ascending order:\n";for(int i=0;i<n;i++)cin>>a[i];int l=0,r=n-1;while(l<r){int m=l+(r-l)/2;if(m<n-1)l=m+1;else r=m;}cout<<"Largest element = "<<a[l]<<"\n";}

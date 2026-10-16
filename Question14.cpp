@@ -1,40 +1,4 @@
-// Check whether a number is an Armstrong number.
+// Q14: Linear Search in a 1D array.
 #include <iostream>
 using namespace std;
-
-int main() {
-    long long number;
-    cout << "Enter a non-negative integer: ";
-    cin >> number;
-
-    if (number < 0) {
-        cout << "Negative numbers are not Armstrong numbers in this program.\n";
-        return 0;
-    }
-
-    long long temporary = number;
-    int digits = 0;
-    do {
-        ++digits;
-        temporary /= 10;
-    } while (temporary != 0);
-
-    temporary = number;
-    long long sum = 0;
-    do {
-        int digit = static_cast<int>(temporary % 10);
-        long long power = 1;
-        for (int exponent = 0; exponent < digits; ++exponent) {
-            power *= digit;
-        }
-        sum += power;
-        temporary /= 10;
-    } while (temporary != 0);
-
-    if (sum == number) {
-        cout << number << " is an Armstrong number.\n";
-    } else {
-        cout << number << " is not an Armstrong number.\n";
-    }
-    return 0;
-}
+int main(){int n,a[1000],x;cout<<"Enter size: ";cin>>n;if(n<1||n>1000){cout<<"Invalid size\n";return 0;}for(int i=0;i<n;i++)cin>>a[i];cout<<"Search value: ";cin>>x;for(int i=0;i<n;i++)if(a[i]==x){cout<<"Found at position "<<i+1<<"\n";return 0;}cout<<"Not found\n";}

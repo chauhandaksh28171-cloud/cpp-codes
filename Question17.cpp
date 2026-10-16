@@ -1,19 +1,4 @@
-// Display all perfect numbers between 1 and 1000.
+// Q17: Check whether a number is present using Linear Search.
 #include <iostream>
 using namespace std;
-
-int main() {
-    for (int number = 2; number <= 1000; ++number) {
-        int divisorSum = 0;
-        for (int divisor = 1; divisor <= number / 2; ++divisor) {
-            if (number % divisor == 0) {
-                divisorSum += divisor;
-            }
-        }
-        if (divisorSum == number) {
-            cout << number << " ";
-        }
-    }
-    cout << '\n';
-    return 0;
-}
+int main(){int n,a[1000],x;cout<<"Enter size: ";cin>>n;if(n<1||n>1000){cout<<"Invalid size\n";return 0;}for(int i=0;i<n;i++)cin>>a[i];cout<<"Number to check: ";cin>>x;bool found=false;for(int i=0;i<n;i++)if(a[i]==x){found=true;break;}if(found)cout<<"Number is present\n";else cout<<"Number is not present\n";}

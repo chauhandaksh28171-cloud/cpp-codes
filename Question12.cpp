@@ -1,26 +1,4 @@
-// Generate a Fibonacci series using a while loop.
+// Q12: Bubble Sort in descending order.
 #include <iostream>
 using namespace std;
-
-int main() {
-    int terms;
-    cout << "How many Fibonacci terms do you want (1-93)? ";
-    cin >> terms;
-
-    if (terms < 1 || terms > 93) {
-        cout << "Please enter a term count from 1 to 93.\n";
-        return 0;
-    }
-
-    unsigned long long first = 0, second = 1;
-    int count = 0;
-    while (count < terms) {
-        cout << first << " ";
-        unsigned long long next = first + second;
-        first = second;
-        second = next;
-        ++count;
-    }
-    cout << '\n';
-    return 0;
-}
+int main(){int n,a[1000];cout<<"Enter size: ";cin>>n;if(n<1||n>1000){cout<<"Invalid size\n";return 0;}for(int i=0;i<n;i++)cin>>a[i];for(int p=0;p<n-1;p++){bool changed=false;for(int i=0;i<n-p-1;i++)if(a[i]<a[i+1]){int t=a[i];a[i]=a[i+1];a[i+1]=t;changed=true;}if(!changed)break;}for(int i=0;i<n;i++)cout<<a[i]<<" ";cout<<"\n";}

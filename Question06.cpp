@@ -1,24 +1,4 @@
-// Check whether a number is prime; terminate the checking loop early using break.
+// Q6: Search an element in a 1D array without using functions.
 #include <iostream>
 using namespace std;
-
-int main() {
-    int number;
-    cout << "Enter an integer: ";
-    cin >> number;
-
-    bool isPrime = (number >= 2);
-    for (int divisor = 2; isPrime && divisor <= number / divisor; ++divisor) {
-        if (number % divisor == 0) {
-            isPrime = false;
-            break; // A divisor was found, so stop checking.
-        }
-    }
-
-    if (isPrime) {
-        cout << number << " is a prime number.\n";
-    } else {
-        cout << number << " is not a prime number.\n";
-    }
-    return 0;
-}
+int main(){int n,target;cout<<"Enter size: ";cin>>n;if(n<1||n>1000){cout<<"Invalid size\n";return 0;}int a[1000];for(int i=0;i<n;i++)cin>>a[i];cout<<"Target: ";cin>>target;int pos=-1;for(int i=0;i<n;i++)if(a[i]==target){pos=i;break;}if(pos==-1)cout<<"Not found\n";else cout<<"Found at position "<<pos+1<<"\n";}

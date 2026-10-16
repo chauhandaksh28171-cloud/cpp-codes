@@ -1,23 +1,4 @@
-// Print a multiplication table, stopping when the product exceeds 50.
+// Q8: Add two matrices of the same dimensions.
 #include <iostream>
 using namespace std;
-
-int main() {
-    int number;
-    cout << "Enter a positive integer: ";
-    cin >> number;
-
-    if (number <= 0) {
-        cout << "Please enter a positive integer.\n";
-        return 0;
-    }
-
-    for (int multiplier = 1; multiplier <= 10; ++multiplier) {
-        int product = number * multiplier;
-        if (product > 50) {
-            break;
-        }
-        cout << number << " x " << multiplier << " = " << product << '\n';
-    }
-    return 0;
-}
+int main(){int r,c,a[50][50],b[50][50];cout<<"Enter rows and columns (max 50): ";cin>>r>>c;if(r<1||r>50||c<1||c>50){cout<<"Invalid dimensions\n";return 0;}cout<<"Enter first matrix:\n";for(int i=0;i<r;i++)for(int j=0;j<c;j++)cin>>a[i][j];cout<<"Enter second matrix:\n";for(int i=0;i<r;i++)for(int j=0;j<c;j++)cin>>b[i][j];cout<<"Sum:\n";for(int i=0;i<r;i++){for(int j=0;j<c;j++)cout<<a[i][j]+b[i][j]<<" ";cout<<"\n";}}
