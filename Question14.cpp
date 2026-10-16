@@ -1,4 +1,22 @@
-// Q14: Linear Search in a 1D array.
+// Question 14: Find a substring using strstr()
+
 #include <iostream>
+#include <cstring>
 using namespace std;
-int main(){int n,a[1000],x;cout<<"Enter size: ";cin>>n;if(n<1||n>1000){cout<<"Invalid size\n";return 0;}for(int i=0;i<n;i++)cin>>a[i];cout<<"Search value: ";cin>>x;for(int i=0;i<n;i++)if(a[i]==x){cout<<"Found at position "<<i+1<<"\n";return 0;}cout<<"Not found\n";}
+
+int main() {
+    char text[300], substring[100];
+
+    cout << "Enter the main string: ";
+    cin.getline(text, 300);
+    cout << "Enter the substring: ";
+    cin.getline(substring, 100);
+
+    char *position = strstr(text, substring);
+    if (position != nullptr)
+        cout << "Substring found at index " << (position - text) << '\n';
+    else
+        cout << "Substring not found.\n";
+
+    return 0;
+}

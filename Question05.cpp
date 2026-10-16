@@ -1,4 +1,18 @@
-// Q5: Input 10 numbers and count even and odd numbers.
+// Question 5: Concatenate two strings using strcat()
+
 #include <iostream>
+#include <cstring>
 using namespace std;
-int main(){int x,even=0,odd=0;cout<<"Enter 10 integers:\n";for(int i=0;i<10;i++){cin>>x;if(x%2==0)even++;else odd++;}cout<<"Even = "<<even<<"\nOdd = "<<odd<<"\n";}
+
+int main() {
+    char first[400], second[200];
+
+    cout << "Enter first string: ";
+    cin.getline(first, 200);
+    cout << "Enter second string: ";
+    cin.getline(second, 200);
+
+    strcat(first, second);
+    cout << "Concatenated string = " << first << '\n';
+    return 0;
+}

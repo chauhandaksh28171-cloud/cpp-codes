@@ -1,4 +1,21 @@
-// Q8: Add two matrices of the same dimensions.
+// Question 8: Check case-sensitive equality using strcmp()
+
 #include <iostream>
+#include <cstring>
 using namespace std;
-int main(){int r,c,a[50][50],b[50][50];cout<<"Enter rows and columns (max 50): ";cin>>r>>c;if(r<1||r>50||c<1||c>50){cout<<"Invalid dimensions\n";return 0;}cout<<"Enter first matrix:\n";for(int i=0;i<r;i++)for(int j=0;j<c;j++)cin>>a[i][j];cout<<"Enter second matrix:\n";for(int i=0;i<r;i++)for(int j=0;j<c;j++)cin>>b[i][j];cout<<"Sum:\n";for(int i=0;i<r;i++){for(int j=0;j<c;j++)cout<<a[i][j]+b[i][j]<<" ";cout<<"\n";}}
+
+int main() {
+    char first[200], second[200];
+
+    cout << "Enter first string: ";
+    cin.getline(first, 200);
+    cout << "Enter second string: ";
+    cin.getline(second, 200);
+
+    if (strcmp(first, second) == 0)
+        cout << "Strings are equal (case-sensitive).\n";
+    else
+        cout << "Strings are different (case-sensitive).\n";
+
+    return 0;
+}

@@ -1,4 +1,24 @@
-// Q2: Sum all elements in a 1D array.
+// Question 2: Count vowels in a string using strlen()
+
 #include <iostream>
+#include <cstring>
 using namespace std;
-int main(){ int n; cout<<"Enter size: ";cin>>n;if(n<1||n>1000){cout<<"Invalid size\n";return 0;} long long sum=0; for(int i=0,x;i<n;i++){cin>>x;sum+=x;} cout<<"Sum = "<<sum<<"\n"; }
+
+int main() {
+    char text[200];
+    int vowels = 0;
+
+    cout << "Enter a string: ";
+    cin.getline(text, 200);
+
+    for (int i = 0; i < strlen(text); i++) {
+        char ch = text[i];
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+            ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
+            vowels++;
+        }
+    }
+
+    cout << "Number of vowels = " << vowels << '\n';
+    return 0;
+}

@@ -1,4 +1,27 @@
-// Q11: Bubble Sort in ascending order.
+// Question 11: Check whether a string is palindrome using strrev()
+
 #include <iostream>
+#include <cstring>
 using namespace std;
-int main(){int n,a[1000];cout<<"Enter size: ";cin>>n;if(n<1||n>1000){cout<<"Invalid size\n";return 0;}for(int i=0;i<n;i++)cin>>a[i];for(int p=0;p<n-1;p++){bool changed=false;for(int i=0;i<n-p-1;i++)if(a[i]>a[i+1]){int t=a[i];a[i]=a[i+1];a[i+1]=t;changed=true;}if(!changed)break;}for(int i=0;i<n;i++)cout<<a[i]<<" ";cout<<"\n";}
+
+int main() {
+    char text[200], reversed[200];
+
+    cout << "Enter a string: ";
+    cin.getline(text, 200);
+
+    strcpy(reversed, text);
+    int length = strlen(reversed);
+    for (int i = 0; i < length / 2; i++) {
+        char temp = reversed[i];
+        reversed[i] = reversed[length - 1 - i];
+        reversed[length - 1 - i] = temp;
+    }
+
+    if (strcmp(text, reversed) == 0)
+        cout << "It is a palindrome.\n";
+    else
+        cout << "It is not a palindrome.\n";
+
+    return 0;
+}

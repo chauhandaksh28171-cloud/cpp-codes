@@ -1,4 +1,16 @@
-// Q3: Find maximum and minimum elements in an array.
+// Question 3: Copy one string to another using strcpy()
+
 #include <iostream>
+#include <cstring>
 using namespace std;
-int main(){int n;cout<<"Enter size: ";cin>>n;if(n<1||n>1000){cout<<"Invalid size\n";return 0;}int a[1000];for(int i=0;i<n;i++)cin>>a[i];int mn=a[0],mx=a[0];for(int i=1;i<n;i++){if(a[i]<mn)mn=a[i];if(a[i]>mx)mx=a[i];}cout<<"Minimum = "<<mn<<"\nMaximum = "<<mx<<"\n";}
+
+int main() {
+    char source[200], destination[200];
+
+    cout << "Enter a string: ";
+    cin.getline(source, 200);
+
+    strcpy(destination, source);
+    cout << "Copied string = " << destination << '\n';
+    return 0;
+}

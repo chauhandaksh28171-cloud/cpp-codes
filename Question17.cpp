@@ -1,4 +1,25 @@
-// Q17: Check whether a number is present using Linear Search.
+// Question 17: Remove all vowels from a string using string functions
+
 #include <iostream>
+#include <cstring>
 using namespace std;
-int main(){int n,a[1000],x;cout<<"Enter size: ";cin>>n;if(n<1||n>1000){cout<<"Invalid size\n";return 0;}for(int i=0;i<n;i++)cin>>a[i];cout<<"Number to check: ";cin>>x;bool found=false;for(int i=0;i<n;i++)if(a[i]==x){found=true;break;}if(found)cout<<"Number is present\n";else cout<<"Number is not present\n";}
+
+int main() {
+    char text[300], result[300];
+    int j = 0;
+
+    cout << "Enter a string: ";
+    cin.getline(text, 300);
+
+    for (int i = 0; i < strlen(text); i++) {
+        char ch = text[i];
+        bool vowel = (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+                      ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U');
+        if (!vowel)
+            result[j++] = ch;
+    }
+    result[j] = '\0';
+
+    cout << "String without vowels = " << result << '\n';
+    return 0;
+}

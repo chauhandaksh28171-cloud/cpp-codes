@@ -1,4 +1,15 @@
-// Q1: Input and display a 1D array.
+// Question 1: Input a string and find its length using strlen()
+
 #include <iostream>
+#include <cstring>
 using namespace std;
-int main(){ int n; cout<<"Enter size: "; cin>>n; if(n<1||n>1000){cout<<"Invalid size\n";return 0;} int a[1000]; for(int i=0;i<n;i++)cin>>a[i]; cout<<"Array: "; for(int i=0;i<n;i++)cout<<a[i]<<" "; cout<<"\n"; }
+
+int main() {
+    char text[200];
+
+    cout << "Enter a string: ";
+    cin.getline(text, 200);
+
+    cout << "Length = " << strlen(text) << '\n';
+    return 0;
+}

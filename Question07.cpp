@@ -1,4 +1,25 @@
-// Q7: Input and display a 2D array (matrix).
+// Question 7: Compare two strings using strcmp()
+
 #include <iostream>
+#include <cstring>
 using namespace std;
-int main(){int r,c,a[50][50];cout<<"Enter rows and columns (max 50): ";cin>>r>>c;if(r<1||r>50||c<1||c>50){cout<<"Invalid dimensions\n";return 0;}for(int i=0;i<r;i++)for(int j=0;j<c;j++)cin>>a[i][j];cout<<"Matrix:\n";for(int i=0;i<r;i++){for(int j=0;j<c;j++)cout<<a[i][j]<<" ";cout<<"\n";}}
+
+int main() {
+    char first[200], second[200];
+
+    cout << "Enter first string: ";
+    cin.getline(first, 200);
+    cout << "Enter second string: ";
+    cin.getline(second, 200);
+
+    int result = strcmp(first, second);
+
+    if (result == 0)
+        cout << "Both strings are equal.\n";
+    else if (result < 0)
+        cout << "First string comes before second string.\n";
+    else
+        cout << "First string comes after second string.\n";
+
+    return 0;
+}

@@ -1,4 +1,23 @@
-// Q4: Reverse a 1D array.
+// Question 4: Input two strings and check if equal using strcpy() and comparison
+
 #include <iostream>
+#include <cstring>
 using namespace std;
-int main(){int n;cout<<"Enter size: ";cin>>n;if(n<1||n>1000){cout<<"Invalid size\n";return 0;}int a[1000];for(int i=0;i<n;i++)cin>>a[i];for(int i=0;i<n/2;i++){int t=a[i];a[i]=a[n-1-i];a[n-1-i]=t;}cout<<"Reversed: ";for(int i=0;i<n;i++)cout<<a[i]<<" ";cout<<"\n";}
+
+int main() {
+    char first[200], second[200], copiedFirst[200];
+
+    cout << "Enter first string: ";
+    cin.getline(first, 200);
+    cout << "Enter second string: ";
+    cin.getline(second, 200);
+
+    strcpy(copiedFirst, first);
+
+    if (strcmp(copiedFirst, second) == 0)
+        cout << "Strings are equal.\n";
+    else
+        cout << "Strings are not equal.\n";
+
+    return 0;
+}

@@ -1,4 +1,29 @@
-// Q16: Count occurrences using Linear Search.
+// Question 16: Count words using strlen() and spaces
+
 #include <iostream>
+#include <cstring>
+#include <cctype>
 using namespace std;
-int main(){int n,a[1000],x,count=0;cout<<"Enter size: ";cin>>n;if(n<1||n>1000){cout<<"Invalid size\n";return 0;}for(int i=0;i<n;i++)cin>>a[i];cout<<"Value to count: ";cin>>x;for(int i=0;i<n;i++)if(a[i]==x)count++;cout<<"Occurrences = "<<count<<"\n";}
+
+int main() {
+    char text[300];
+    int words = 0;
+    bool insideWord = false;
+
+    cout << "Enter a sentence: ";
+    cin.getline(text, 300);
+
+    for (int i = 0; i < strlen(text); i++) {
+        if (!isspace(static_cast<unsigned char>(text[i]))) {
+            if (!insideWord) {
+                words++;
+                insideWord = true;
+            }
+        } else {
+            insideWord = false;
+        }
+    }
+
+    cout << "Number of words = " << words << '\n';
+    return 0;
+}
